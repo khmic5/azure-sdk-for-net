@@ -6,10 +6,10 @@
       "RequestHeaders": {
         "Accept": "application/json",
         "Authorization": "Sanitized",
-        "traceparent": "00-4489b136b76798f32bebb55fa1cec5d6-f46c54be77b5b44f-00",
-        "User-Agent": "azsdk-net-Maps.Search/1.0.3-alpha.20220721.1 (.NET 6.0.7; Microsoft Windows 10.0.19044)",
-        "x-ms-client-id": "a1ee513d-a824-4693-a430-e997b5d25172",
-        "x-ms-client-request-id": "11f106ec4215d492448b23ed3e7dca4e",
+        "traceparent": "00-79231beb36a2612e54e844720d5f75d5-f3654cbb901402ac-00",
+        "User-Agent": "azsdk-net-Maps.Search/1.0.3-alpha.20220809.1 (.NET 6.0.7; Microsoft Windows 10.0.22000)",
+        "x-ms-client-id": "86ff944f-d704-4f24-8af8-34f4a58ff4e0",
+        "x-ms-client-request-id": "6865cb727ab16e1bf8b92f291b84d970",
         "x-ms-return-client-request-id": "true"
       },
       "RequestBody": null,
@@ -17,12 +17,12 @@
       "ResponseHeaders": {
         "Content-Length": "78",
         "Content-Type": "application/json; charset=utf-8",
-        "Date": "Thu, 21 Jul 2022 09:28:59 GMT",
+        "Date": "Tue, 09 Aug 2022 12:45:34 GMT",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
         "X-Cache": "CONFIG_NOCACHE",
         "X-Content-Type-Options": "nosniff",
         "x-ms-azuremaps-region": "West US 2",
-        "X-MSEdge-Ref": "Ref A: 56B7639703C14C0C807E8F3826368A85 Ref B: PAOEDGE0518 Ref C: 2022-07-21T09:28:59Z"
+        "X-MSEdge-Ref": "Ref A: D9EF6E47658B4F75901561B2659EEEFE Ref B: TPE30EDGE0508 Ref C: 2022-08-09T12:45:35Z"
       },
       "ResponseBody": {
         "error": {
@@ -33,9 +33,9 @@
     }
   ],
   "Variables": {
-    "AZMAPS_CLIENT_ID": "a1ee513d-a824-4693-a430-e997b5d25172",
-    "AZURE_AUTHORITY_HOST": "https://login.microsoftonline.com",
+    "AZMAPS_CLIENT_ID": "86ff944f-d704-4f24-8af8-34f4a58ff4e0",
+    "AZURE_AUTHORITY_HOST": "https://login.microsoftonline.com/",
     "ENDPOINT_URL": "https://atlas.microsoft.com",
-    "RandomSeed": "1571892617"
+    "RandomSeed": "714836918"
   }
 }

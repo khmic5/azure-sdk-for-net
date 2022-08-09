@@ -6,10 +6,10 @@
       "RequestHeaders": {
         "Accept": "application/json",
         "Authorization": "Sanitized",
-        "traceparent": "00-dccdc30a04969b63e924be40ce6f4f1e-6f140e9d2a904a3f-00",
-        "User-Agent": "azsdk-net-Maps.Search/1.0.3-alpha.20220721.1 (.NET 6.0.7; Microsoft Windows 10.0.19044)",
-        "x-ms-client-id": "a1ee513d-a824-4693-a430-e997b5d25172",
-        "x-ms-client-request-id": "a57a459abfa16efce1fd87031007939f",
+        "traceparent": "00-94306e06888e9c7367e49750d1c99431-f1eef5c710c10226-00",
+        "User-Agent": "azsdk-net-Maps.Search/1.0.3-alpha.20220809.1 (.NET 6.0.7; Microsoft Windows 10.0.22000)",
+        "x-ms-client-id": "86ff944f-d704-4f24-8af8-34f4a58ff4e0",
+        "x-ms-client-request-id": "27439e47a467b3e8798ac1d14abbaf0b",
         "x-ms-return-client-request-id": "true"
       },
       "RequestBody": null,
@@ -17,19 +17,19 @@
       "ResponseHeaders": {
         "Content-Length": "766",
         "Content-Type": "application/json; charset=utf-8",
-        "Date": "Thu, 21 Jul 2022 09:29:11 GMT",
+        "Date": "Tue, 09 Aug 2022 12:45:48 GMT",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
         "Vary": "Accept-Encoding",
         "X-Cache": "CONFIG_NOCACHE",
         "X-Content-Type-Options": "nosniff",
         "x-ms-azuremaps-region": "West US 2",
-        "X-MSEdge-Ref": "Ref A: BC35DA7DEBCE4EC083751D6BC8DA05E1 Ref B: PAOEDGE0518 Ref C: 2022-07-21T09:29:11Z"
+        "X-MSEdge-Ref": "Ref A: 65305F6107334EEC971DEFB1F64190E7 Ref B: TPE30EDGE0508 Ref C: 2022-08-09T12:45:48Z"
       },
       "ResponseBody": {
         "summary": {
           "query": "moke",
           "queryType": "NON_NEAR",
-          "queryTime": 4,
+          "queryTime": 16,
           "numResults": 1,
           "offset": 0,
           "totalResults": 1,
@@ -38,8 +38,8 @@
         "results": [
           {
             "type": "Street",
-            "id": "NZ/STR/p0/159958",
-            "score": 2.0553629398,
+            "id": "NZ/STR/p0/63660",
+            "score": 2.0553193092,
             "matchConfidence": {
               "score": 0.8924786087880523
             },
@@ -57,17 +57,17 @@
               "localName": "Closeburn"
             },
             "position": {
-              "lat": -44.99791,
-              "lon": 168.57396
+              "lat": -44.99444,
+              "lon": 168.57535
             },
             "viewport": {
               "topLeftPoint": {
-                "lat": -44.99757,
-                "lon": 168.57261
+                "lat": -44.99355,
+                "lon": 168.57394
               },
               "btmRightPoint": {
-                "lat": -44.99862,
-                "lon": 168.57492
+                "lat": -44.99558,
+                "lon": 168.57587
               }
             }
           }
@@ -76,9 +76,9 @@
     }
   ],
   "Variables": {
-    "AZMAPS_CLIENT_ID": "a1ee513d-a824-4693-a430-e997b5d25172",
-    "AZURE_AUTHORITY_HOST": "https://login.microsoftonline.com",
+    "AZMAPS_CLIENT_ID": "86ff944f-d704-4f24-8af8-34f4a58ff4e0",
+    "AZURE_AUTHORITY_HOST": "https://login.microsoftonline.com/",
     "ENDPOINT_URL": "https://atlas.microsoft.com",
-    "RandomSeed": "103659532"
+    "RandomSeed": "929740476"
   }
 }

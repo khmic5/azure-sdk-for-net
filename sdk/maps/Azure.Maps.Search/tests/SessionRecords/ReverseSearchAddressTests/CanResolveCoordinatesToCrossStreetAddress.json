@@ -6,10 +6,10 @@
       "RequestHeaders": {
         "Accept": "application/json",
         "Authorization": "Sanitized",
-        "traceparent": "00-0a3fb823c6c7857d16422ddd4ee53c12-6303f6410e4a3d5c-00",
-        "User-Agent": "azsdk-net-Maps.Search/1.0.3-alpha.20220721.1 (.NET 6.0.7; Microsoft Windows 10.0.19044)",
-        "x-ms-client-id": "a1ee513d-a824-4693-a430-e997b5d25172",
-        "x-ms-client-request-id": "9b4a69ae5cf2aa8fd785728bfcbd9b34",
+        "traceparent": "00-507e03178af298056b2a4e509995b2fc-d12fd87f1e09c40f-00",
+        "User-Agent": "azsdk-net-Maps.Search/1.0.3-alpha.20220809.1 (.NET 6.0.7; Microsoft Windows 10.0.22000)",
+        "x-ms-client-id": "86ff944f-d704-4f24-8af8-34f4a58ff4e0",
+        "x-ms-client-request-id": "7457c087b9f8f2f8ee133a65637f312e",
         "x-ms-return-client-request-id": "true"
       },
       "RequestBody": null,
@@ -17,18 +17,18 @@
       "ResponseHeaders": {
         "Content-Length": "450",
         "Content-Type": "application/json; charset=utf-8",
-        "Date": "Thu, 21 Jul 2022 09:29:03 GMT",
+        "Date": "Tue, 09 Aug 2022 12:45:38 GMT",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
         "Vary": "Accept-Encoding",
         "X-Cache": "CONFIG_NOCACHE",
         "X-Content-Type-Options": "nosniff",
         "x-ms-azuremaps-region": "West US 2",
-        "X-MSEdge-Ref": "Ref A: 46B859E807F64CD18113148194E84762 Ref B: PAOEDGE0518 Ref C: 2022-07-21T09:29:04Z"
+        "X-MSEdge-Ref": "Ref A: 9D9689ABD888442EA326D30E8DBA4D86 Ref B: TPE30EDGE0508 Ref C: 2022-08-09T12:45:39Z"
       },
       "ResponseBody": {
         "summary": {
           "numResults": 1,
-          "queryTime": 84
+          "queryTime": 22
         },
         "addresses": [
           {
@@ -51,9 +51,9 @@
     }
   ],
   "Variables": {
-    "AZMAPS_CLIENT_ID": "a1ee513d-a824-4693-a430-e997b5d25172",
-    "AZURE_AUTHORITY_HOST": "https://login.microsoftonline.com",
+    "AZMAPS_CLIENT_ID": "86ff944f-d704-4f24-8af8-34f4a58ff4e0",
+    "AZURE_AUTHORITY_HOST": "https://login.microsoftonline.com/",
     "ENDPOINT_URL": "https://atlas.microsoft.com",
-    "RandomSeed": "56710443"
+    "RandomSeed": "335575766"
   }
 }
