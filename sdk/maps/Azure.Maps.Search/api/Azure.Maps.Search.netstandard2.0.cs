@@ -280,12 +280,6 @@ namespace Azure.Maps.Search.Models
         public static bool operator !=(Azure.Maps.Search.Models.EntryPointType left, Azure.Maps.Search.Models.EntryPointType right) { throw null; }
         public override string ToString() { throw null; }
     }
-    public partial class ErrorAdditionalInfo
-    {
-        internal ErrorAdditionalInfo() { }
-        public object Info { get { throw null; } }
-        public string Type { get { throw null; } }
-    }
     public partial class FuzzySearchOptions : Azure.Maps.Search.Models.SearchPointOfInterestOptions
     {
         public FuzzySearchOptions() { }
@@ -878,7 +872,6 @@ namespace Azure.Maps.Search.Models
         public static Azure.Maps.Search.Models.BrandName BrandName(string name = null) { throw null; }
         public static Azure.Maps.Search.Models.ClassificationName ClassificationName(string nameLocale = null, string name = null) { throw null; }
         public static Azure.Maps.Search.Models.DataSource DataSource(Azure.Maps.Search.Models.GeometryIdentifier geometry = null) { throw null; }
-        public static Azure.Maps.Search.Models.ErrorAdditionalInfo ErrorAdditionalInfo(string type = null, object info = null) { throw null; }
         public static Azure.Maps.Search.Models.GeometryIdentifier GeometryIdentifier(string id = null) { throw null; }
         public static Azure.Maps.Search.Models.LatLongPairAbbreviated LatLongPairAbbreviated(double? lat = default(double?), double? lon = default(double?)) { throw null; }
         public static Azure.Maps.Search.Models.OperatingHours OperatingHours(string mode = null, System.Collections.Generic.IEnumerable<Azure.Maps.Search.Models.OperatingHoursTimeRange> timeRanges = null) { throw null; }

@@ -32,15 +32,6 @@ namespace Azure.Maps.Search.Models
             return new PolygonObject(providerId, geometryData);
         }
 
-        /// <summary> Initializes a new instance of ErrorAdditionalInfo. </summary>
-        /// <param name="type"> The additional info type. </param>
-        /// <param name="info"> The additional info. </param>
-        /// <returns> A new <see cref="Models.ErrorAdditionalInfo"/> instance for mocking. </returns>
-        public static ErrorAdditionalInfo ErrorAdditionalInfo(string type = null, object info = null)
-        {
-            return new ErrorAdditionalInfo(type, info);
-        }
-
         /// <summary> Initializes a new instance of LatLongPairAbbreviated. </summary>
         /// <param name="lat"> Latitude property. </param>
         /// <param name="lon"> Longitude property. </param>
