@@ -225,14 +225,5 @@ namespace Azure.Maps.Search.Models
         {
             return new ReverseSearchCrossStreetAddressResultItem(address, position);
         }
-
-        /// <summary> Initializes a new instance of BatchResultSummary. </summary>
-        /// <param name="successfulRequests"> Number of successful requests in the batch. </param>
-        /// <param name="totalRequests"> Total number of requests in the batch. </param>
-        /// <returns> A new <see cref="Models.BatchResultSummary"/> instance for mocking. </returns>
-        public static BatchResultSummary BatchResultSummary(int? successfulRequests = null, int? totalRequests = null)
-        {
-            return new BatchResultSummary(successfulRequests, totalRequests);
-        }
     }
 }

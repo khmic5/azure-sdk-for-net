@@ -189,12 +189,6 @@ namespace Azure.Maps.Search.Models
         public int? SuccessfulRequests { get { throw null; } }
         public int? TotalRequests { get { throw null; } }
     }
-    public partial class BatchResultSummary
-    {
-        internal BatchResultSummary() { }
-        public int? SuccessfulRequests { get { throw null; } }
-        public int? TotalRequests { get { throw null; } }
-    }
     public partial class BoundingBoxCompassNotation
     {
         internal BoundingBoxCompassNotation() { }
@@ -880,7 +874,6 @@ namespace Azure.Maps.Search.Models
     public static partial class SearchModelFactory
     {
         public static Azure.Maps.Search.Models.AddressDetails AddressDetails(string buildingNumber = null, string street = null, string crossStreet = null, string streetNumber = null, System.Collections.Generic.IEnumerable<string> routeNumbers = null, string streetName = null, string streetNameAndNumber = null, string municipality = null, string municipalitySubdivision = null, string countryTertiarySubdivision = null, string countrySecondarySubdivision = null, string countrySubdivision = null, string postalCode = null, string extendedPostalCode = null, string countryCode = null, string country = null, string countryCodeISO3 = null, string freeformAddress = null, string countrySubdivisionName = null, string localName = null, Azure.Maps.Search.Models.BoundingBoxCompassNotation boundingBox = null) { throw null; }
-        public static Azure.Maps.Search.Models.BatchResultSummary BatchResultSummary(int? successfulRequests = default(int?), int? totalRequests = default(int?)) { throw null; }
         public static Azure.Maps.Search.Models.BoundingBoxCompassNotation BoundingBoxCompassNotation(string northEast = null, string southWest = null, Azure.Maps.Search.Models.EntityType? entity = default(Azure.Maps.Search.Models.EntityType?)) { throw null; }
         public static Azure.Maps.Search.Models.BrandName BrandName(string name = null) { throw null; }
         public static Azure.Maps.Search.Models.ClassificationName ClassificationName(string nameLocale = null, string name = null) { throw null; }
