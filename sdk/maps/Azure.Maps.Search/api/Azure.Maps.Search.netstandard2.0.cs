@@ -292,10 +292,11 @@ namespace Azure.Maps.Search.Models
         public int? MinFuzzyLevel { get { throw null; } set { } }
         public Azure.Maps.Search.Models.OperatingHoursRange? OperatingHours { get { throw null; } set { } }
     }
-    public partial class FuzzySearchQuery : Azure.Maps.Search.Models.IQueryRepresentable
+    public partial class FuzzySearchQuery
     {
         public FuzzySearchQuery(string query, Azure.Maps.Search.Models.FuzzySearchOptions options = null) { }
-        public string Query(Azure.Maps.Search.SearchClient client) { throw null; }
+        public Azure.Maps.Search.Models.FuzzySearchOptions FuzzySearchOptions { get { throw null; } }
+        public string Query { get { throw null; } }
     }
     [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential)]
     public readonly partial struct GeographicEntityType : System.IEquatable<Azure.Maps.Search.Models.GeographicEntityType>
@@ -437,10 +438,6 @@ namespace Azure.Maps.Search.Models
     {
         internal GeometryIdentifier() { }
         public string Id { get { throw null; } }
-    }
-    public partial interface IQueryRepresentable
-    {
-        string Query(Azure.Maps.Search.SearchClient client);
     }
     public partial class LatLongPairAbbreviated
     {
@@ -641,10 +638,10 @@ namespace Azure.Maps.Search.Models
         internal ReverseSearchAddressBatchResult() { }
         public System.Collections.Generic.IReadOnlyList<Azure.Maps.Search.Models.ReverseSearchAddressBatchItemResponse> Results { get { throw null; } }
     }
-    public partial class ReverseSearchAddressQuery : Azure.Maps.Search.Models.IQueryRepresentable
+    public partial class ReverseSearchAddressQuery
     {
         public ReverseSearchAddressQuery(Azure.Maps.Search.Models.ReverseSearchOptions options = null) { }
-        public string Query(Azure.Maps.Search.SearchClient client) { throw null; }
+        public Azure.Maps.Search.Models.ReverseSearchOptions ReverseSearchAddressOptions { get { throw null; } }
     }
     public partial class ReverseSearchAddressResult
     {
@@ -748,10 +745,11 @@ namespace Azure.Maps.Search.Models
         public System.Collections.Generic.IEnumerable<Azure.Maps.Search.Models.SearchIndexes> ExtendedPostalCodesFor { get { throw null; } set { } }
         public bool? IsTypeAhead { get { throw null; } set { } }
     }
-    public partial class SearchAddressQuery : Azure.Maps.Search.Models.IQueryRepresentable
+    public partial class SearchAddressQuery
     {
         public SearchAddressQuery(string query, Azure.Maps.Search.Models.SearchAddressOptions options = null) { }
-        public string Query(Azure.Maps.Search.SearchClient client) { throw null; }
+        public string Query { get { throw null; } }
+        public Azure.Maps.Search.Models.SearchAddressOptions SearchAddressOptions { get { throw null; } }
     }
     public partial class SearchAddressResult
     {
