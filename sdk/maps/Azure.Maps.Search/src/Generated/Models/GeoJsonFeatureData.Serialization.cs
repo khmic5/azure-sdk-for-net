@@ -10,31 +10,8 @@ using Azure.Core;
 
 namespace Azure.Maps.Search.Models
 {
-    internal partial class GeoJsonFeatureData : IUtf8JsonSerializable
+    internal partial class GeoJsonFeatureData
     {
-        void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("geometry"u8);
-            writer.WriteObjectValue(Geometry);
-            if (Optional.IsDefined(Properties))
-            {
-                writer.WritePropertyName("properties"u8);
-                writer.WriteObjectValue(Properties);
-            }
-            if (Optional.IsDefined(Id))
-            {
-                writer.WritePropertyName("id"u8);
-                writer.WriteStringValue(Id);
-            }
-            if (Optional.IsDefined(FeatureType))
-            {
-                writer.WritePropertyName("featureType"u8);
-                writer.WriteStringValue(FeatureType);
-            }
-            writer.WriteEndObject();
-        }
-
         internal static GeoJsonFeatureData DeserializeGeoJsonFeatureData(JsonElement element)
         {
             if (element.ValueKind == JsonValueKind.Null)

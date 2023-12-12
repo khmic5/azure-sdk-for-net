@@ -7,32 +7,18 @@
 
 using System.Collections.Generic;
 using System.Text.Json;
-using Azure.Core;
 
 namespace Azure.Maps.Search.Models
 {
-    internal partial class GeoJsonFeatureCollectionData : IUtf8JsonSerializable
+    internal partial class GeoJsonFeatureCollectionData
     {
-        void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("features"u8);
-            writer.WriteStartArray();
-            foreach (var item in Features)
-            {
-                writer.WriteObjectValue(item);
-            }
-            writer.WriteEndArray();
-            writer.WriteEndObject();
-        }
-
         internal static GeoJsonFeatureCollectionData DeserializeGeoJsonFeatureCollectionData(JsonElement element)
         {
             if (element.ValueKind == JsonValueKind.Null)
             {
                 return null;
             }
-            IList<GeoJsonFeature> features = default;
+            IReadOnlyList<GeoJsonFeature> features = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("features"u8))

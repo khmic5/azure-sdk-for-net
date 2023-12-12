@@ -7,7 +7,7 @@ Run `dotnet build /t:GenerateCode` to generate code.
 
 ```yaml
 input-file:
-- https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/maps/data-plane/Search/preview/2022-12-01-preview/search.json
+- https://raw.githubusercontent.com/Azure/azure-rest-api-specs/583a4974607e00e1da26915562aeafb4bad079de/specification/maps/data-plane/Search/preview/2022-12-01-preview/search.json
 title: MapsSearchClient
 openapi-type: data-plane
 add-credentials: true

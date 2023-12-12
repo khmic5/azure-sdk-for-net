@@ -7,42 +7,18 @@
 
 using System.Collections.Generic;
 using System.Text.Json;
-using Azure.Core;
 
 namespace Azure.Maps.Search.Models
 {
-    public partial class GeoJsonMultiPointData : IUtf8JsonSerializable
+    public partial class GeoJsonMultiPointData
     {
-        void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("coordinates"u8);
-            writer.WriteStartArray();
-            foreach (var item in Coordinates)
-            {
-                if (item == null)
-                {
-                    writer.WriteNullValue();
-                    continue;
-                }
-                writer.WriteStartArray();
-                foreach (var item0 in item)
-                {
-                    writer.WriteNumberValue(item0);
-                }
-                writer.WriteEndArray();
-            }
-            writer.WriteEndArray();
-            writer.WriteEndObject();
-        }
-
         internal static GeoJsonMultiPointData DeserializeGeoJsonMultiPointData(JsonElement element)
         {
             if (element.ValueKind == JsonValueKind.Null)
             {
                 return null;
             }
-            IList<IList<double>> coordinates = default;
+            IReadOnlyList<IList<double>> coordinates = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("coordinates"u8))

@@ -19,96 +19,43 @@ namespace Azure.Maps.Search.Models
             {
                 return null;
             }
-            Optional<string> buildingNumber = default;
-            Optional<string> street = default;
-            Optional<string> crossStreet = default;
-            Optional<string> streetNumber = default;
-            Optional<IReadOnlyList<string>> routeNumbers = default;
-            Optional<string> streetName = default;
-            Optional<string> streetNameAndNumber = default;
-            Optional<string> municipality = default;
-            Optional<string> municipalitySubdivision = default;
-            Optional<string> countryTertiarySubdivision = default;
-            Optional<string> countrySecondarySubdivision = default;
-            Optional<string> countrySubdivision = default;
+            Optional<string> addressLine = default;
+            Optional<string> locality = default;
+            Optional<string> neighborhood = default;
+            Optional<IReadOnlyList<AddressAdminDistrictsItem>> adminDistricts = default;
             Optional<string> postalCode = default;
-            Optional<string> extendedPostalCode = default;
-            Optional<string> countryCode = default;
-            Optional<string> country = default;
-            Optional<string> countryCodeISO3 = default;
-            Optional<string> freeformAddress = default;
-            Optional<string> countrySubdivisionName = default;
-            Optional<string> localName = default;
-            Optional<BoundingBoxCompassNotation> boundingBox = default;
+            Optional<AddressCountryRegion> countryRegion = default;
+            Optional<string> formattedAddress = default;
+            Optional<Intersection> intersection = default;
             foreach (var property in element.EnumerateObject())
             {
-                if (property.NameEquals("buildingNumber"u8))
+                if (property.NameEquals("addressLine"u8))
                 {
-                    buildingNumber = property.Value.GetString();
+                    addressLine = property.Value.GetString();
                     continue;
                 }
-                if (property.NameEquals("street"u8))
+                if (property.NameEquals("locality"u8))
                 {
-                    street = property.Value.GetString();
+                    locality = property.Value.GetString();
                     continue;
                 }
-                if (property.NameEquals("crossStreet"u8))
+                if (property.NameEquals("neighborhood"u8))
                 {
-                    crossStreet = property.Value.GetString();
+                    neighborhood = property.Value.GetString();
                     continue;
                 }
-                if (property.NameEquals("streetNumber"u8))
-                {
-                    streetNumber = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("routeNumbers"u8))
+                if (property.NameEquals("adminDistricts"u8))
                 {
                     if (property.Value.ValueKind == JsonValueKind.Null)
                     {
                         continue;
                     }
-                    List<string> array = new List<string>();
+                    List<AddressAdminDistrictsItem> array = new List<AddressAdminDistrictsItem>();
                     foreach (var item in property.Value.EnumerateArray())
                     {
-                        array.Add(item.GetString());
+                        array.Add(AddressAdminDistrictsItem.DeserializeAddressAdminDistrictsItem(item));
                     }
-                    routeNumbers = array;
-                    continue;
-                }
-                if (property.NameEquals("streetName"u8))
-                {
-                    streetName = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("streetNameAndNumber"u8))
-                {
-                    streetNameAndNumber = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("municipality"u8))
-                {
-                    municipality = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("municipalitySubdivision"u8))
-                {
-                    municipalitySubdivision = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("countryTertiarySubdivision"u8))
-                {
-                    countryTertiarySubdivision = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("countrySecondarySubdivision"u8))
-                {
-                    countrySecondarySubdivision = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("countrySubdivision"u8))
-                {
-                    countrySubdivision = property.Value.GetString();
+                    adminDistricts = array;
                     continue;
                 }
                 if (property.NameEquals("postalCode"u8))
@@ -116,52 +63,31 @@ namespace Azure.Maps.Search.Models
                     postalCode = property.Value.GetString();
                     continue;
                 }
-                if (property.NameEquals("extendedPostalCode"u8))
-                {
-                    extendedPostalCode = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("countryCode"u8))
-                {
-                    countryCode = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("country"u8))
-                {
-                    country = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("countryCodeISO3"u8))
-                {
-                    countryCodeISO3 = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("freeformAddress"u8))
-                {
-                    freeformAddress = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("countrySubdivisionName"u8))
-                {
-                    countrySubdivisionName = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("localName"u8))
-                {
-                    localName = property.Value.GetString();
-                    continue;
-                }
-                if (property.NameEquals("boundingBox"u8))
+                if (property.NameEquals("countryRegion"u8))
                 {
                     if (property.Value.ValueKind == JsonValueKind.Null)
                     {
                         continue;
                     }
-                    boundingBox = BoundingBoxCompassNotation.DeserializeBoundingBoxCompassNotation(property.Value);
+                    countryRegion = AddressCountryRegion.DeserializeAddressCountryRegion(property.Value);
+                    continue;
+                }
+                if (property.NameEquals("formattedAddress"u8))
+                {
+                    formattedAddress = property.Value.GetString();
+                    continue;
+                }
+                if (property.NameEquals("intersection"u8))
+                {
+                    if (property.Value.ValueKind == JsonValueKind.Null)
+                    {
+                        continue;
+                    }
+                    intersection = Intersection.DeserializeIntersection(property.Value);
                     continue;
                 }
             }
-            return new MapsAddress(buildingNumber.Value, street.Value, crossStreet.Value, streetNumber.Value, Optional.ToList(routeNumbers), streetName.Value, streetNameAndNumber.Value, municipality.Value, municipalitySubdivision.Value, countryTertiarySubdivision.Value, countrySecondarySubdivision.Value, countrySubdivision.Value, postalCode.Value, extendedPostalCode.Value, countryCode.Value, country.Value, countryCodeISO3.Value, freeformAddress.Value, countrySubdivisionName.Value, localName.Value, boundingBox.Value);
+            return new MapsAddress(addressLine.Value, locality.Value, neighborhood.Value, Optional.ToList(adminDistricts), postalCode.Value, countryRegion.Value, formattedAddress.Value, intersection.Value);
         }
     }
 }

@@ -6,20 +6,11 @@
 #nullable disable
 
 using System.Text.Json;
-using Azure.Core;
 
 namespace Azure.Maps.Search.Models
 {
-    public partial class GeoJsonObject : IUtf8JsonSerializable
+    public partial class GeoJsonObject
     {
-        void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
-        {
-            writer.WriteStartObject();
-            writer.WritePropertyName("type"u8);
-            writer.WriteStringValue(Type.ToSerialString());
-            writer.WriteEndObject();
-        }
-
         internal static GeoJsonObject DeserializeGeoJsonObject(JsonElement element)
         {
             if (element.ValueKind == JsonValueKind.Null)
@@ -30,16 +21,17 @@ namespace Azure.Maps.Search.Models
             {
                 switch (discriminator.GetString())
                 {
+                    case "Boundary": return Boundary.DeserializeBoundary(element);
                     case "Feature": return GeoJsonFeature.DeserializeGeoJsonFeature(element);
                     case "FeatureCollection": return GeoJsonFeatureCollection.DeserializeGeoJsonFeatureCollection(element);
-                    case "GeoJsonGeometry": return GeoJsonGeometry.DeserializeGeoJsonGeometry(element);
                     case "GeometryCollection": return GeoJsonGeometryCollection.DeserializeGeoJsonGeometryCollection(element);
                     case "LineString": return GeoJsonLineString.DeserializeGeoJsonLineString(element);
                     case "MultiLineString": return GeoJsonMultiLineString.DeserializeGeoJsonMultiLineString(element);
-                    case "MultiPoint": return GeoJsonMultiPoint.DeserializeGeoJsonMultiPoint(element);
                     case "MultiPolygon": return GeoJsonMultiPolygon.DeserializeGeoJsonMultiPolygon(element);
-                    case "Point": return GeoJsonPoint.DeserializeGeoJsonPoint(element);
                     case "Polygon": return GeoJsonPolygon.DeserializeGeoJsonPolygon(element);
+                    case "MultiPoint": return GeoJsonMultiPoint.DeserializeGeoJsonMultiPoint(element);
+                    case "GeoJsonGeometry": return GeoJsonGeometry.DeserializeGeoJsonGeometry(element);
+                    case "Point": return GeoJsonPoint.DeserializeGeoJsonPoint(element);
                 }
             }
             return UnknownGeoJsonObject.DeserializeUnknownGeoJsonObject(element);
